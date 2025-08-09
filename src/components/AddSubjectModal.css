@@ -1,0 +1,97 @@
+/* AddSubject Modal - ChatGPT Style */
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(52,53,65,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: background 0.3s;
+}
+
+.modal-content {
+  background: #fff;
+  color: #353740;
+  padding: 2.2rem 2rem 2rem 2rem;
+  border-radius: 1.2rem;
+  width: 340px;
+  box-shadow: 0 8px 32px rgba(52,53,65,0.18);
+  position: relative;
+  transition: background 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+body.dark .modal-content {
+  background: #202123;
+  color: #ececf1;
+}
+
+.modal-content h2 {
+  margin: 0 0 1.1rem 0;
+  color: #10a37f;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.modal-error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.95rem;
+}
+body.dark .modal-error {
+  background: #3f1d1d;
+  color: #fecaca;
+  border-color: #7f1d1d;
+}
+
+.modal-content input {
+  padding: 0.8rem;
+  border: 1.5px solid #ececf1;
+  border-radius: 0.7rem;
+  background: #f7f7f8;
+  color: #353740;
+  font-size: 1rem;
+  transition: border 0.2s, background 0.2s, color 0.2s;
+}
+body.dark .modal-content input {
+  background: #353740;
+  color: #ececf1;
+  border: 1.5px solid #40414f;
+}
+.modal-content input:focus {
+  border-color: #10a37f;
+  outline: none;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.modal-buttons .btn {
+  background: #10a37f;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.modal-buttons .btn:hover {
+  background: #19c37d;
+}
+
+.modal-buttons .cancel-btn {
+  background: #ef4444;
+}
+.modal-buttons .cancel-btn:hover {
+  background: #b91c1c;
+}
