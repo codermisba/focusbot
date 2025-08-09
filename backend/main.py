@@ -294,4 +294,4 @@ async def delete_subject(subject: str, user: str = "guest"):
     if result.deleted_count == 0:
         raise HTTPException(status_code=404, detail="Subject not found.")
     
-    return {"message": "Subject deleted successfully"}
+        return {"message": "Subject deleted successfully"}
