@@ -18,6 +18,7 @@
 .env.test.local
 .env.production.local
 backend/.env
+venv/
 
 
 npm-debug.log*
