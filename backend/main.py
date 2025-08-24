@@ -11,6 +11,9 @@ from pathlib import Path
 import os
 import requests
 import re
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+import os
 
 # ---------------- Env & Paths ----------------
 load_dotenv()
@@ -320,3 +323,10 @@ if __name__ == "__main__":
     import uvicorn
     port = int(os.getenv("PORT", 8000))
     uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
+
+app.mount("/static", StaticFiles(directory="src/build/static"), name="static")
+
+@app.get("/{full_path:path}")
+async def serve_react_app(full_path: str):
+    index_path = os.path.join("src", "build", "index.html")
+    return FileResponse(index_path)
