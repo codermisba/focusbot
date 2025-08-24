@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: focusbot
+    env: python
+    rootDir: .
+    buildCommand: |
+      pip install -r backend/requirements.txt
+      npm ci
+      npm run build
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: MONGO_URI
+        sync: false
+      - key: SECRET_KEY
+        sync: false
+      - key: HF_API_KEY
+        sync: false
+      # Optional: lock CORS to a custom domain if you later attach one
+      # - key: FRONTEND_ORIGIN
+      #   value: https://your-custom-domain
