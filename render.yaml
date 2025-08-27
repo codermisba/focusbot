@@ -1,13 +1,9 @@
 services:
   - type: web
     name: focusbot
-    env: python
+    env: node
     plan: free
-    buildCommand: |
-      pip install -r backend/requirements.txt
-      npm install
-      npm run build
-    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.10
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    nodeVersion: 20
+    autoDeploy: true
